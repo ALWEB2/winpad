@@ -22,42 +22,6 @@ namespace WinPad
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var time = DateTime.Now.ToString("HH:mm:ss tt");
-
-            string lastsave = path + " - Last Saved: " + time;
-            status.Text = lastsave;
-
-            try
-            {
-                // Create the file, or overwrite if the file exists.
-                using (FileStream fs = File.Create(path))
-                {
-                    byte[] info = new UTF8Encoding(true).GetBytes(richTextBox1.Text);
-                    // Add some information to the file.
-                    fs.Write(info, 0, info.Length);
-                }
-
-                using (FileStream fs = File.Create(path2))
-                {
-                    byte[] info = new UTF8Encoding(true).GetBytes(lastsave);
-                    // Add some information to the file.
-                    fs.Write(info, 0, info.Length);
-                }
-
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-
-            listBox1.Items.Clear();
-            DirectoryInfo dinfo = new DirectoryInfo(@".\");
-            FileInfo[] Files = dinfo.GetFiles("*.txt");
-            foreach (FileInfo file in Files)
-            {
-                listBox1.Items.Add(file.Name);
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -118,9 +82,8 @@ namespace WinPad
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex == -1)
+            if (listBox1.SelectedIndex < 0)
             {
-                MessageBox.Show("Please select an Item!");
             }
             else
             {
@@ -150,6 +113,46 @@ namespace WinPad
                 {
                     listBox1.Items.Add(file.Name);
                 }
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var time = DateTime.Now.ToString("HH:mm:ss tt");
+
+            string lastsave = path + " - Last Saved: " + time;
+            status.Text = lastsave;
+
+            try
+            {
+                // Create the file, or overwrite if the file exists.
+                using (FileStream fs = File.Create(path))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes(richTextBox1.Text);
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                }
+
+                using (FileStream fs = File.Create(path2))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes(lastsave);
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            listBox1.Items.Clear();
+            DirectoryInfo dinfo = new DirectoryInfo(@".\");
+            FileInfo[] Files = dinfo.GetFiles("*.txt");
+            foreach (FileInfo file in Files)
+            {
+                listBox1.Items.Add(file.Name);
             }
         }
     }
