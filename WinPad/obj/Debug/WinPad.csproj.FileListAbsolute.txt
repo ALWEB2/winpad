@@ -1,0 +1,9 @@
+C:\Users\19191093\source\repos\WinPad\WinPad\bin\Debug\WinPad.exe.config
+C:\Users\19191093\source\repos\WinPad\WinPad\bin\Debug\WinPad.exe
+C:\Users\19191093\source\repos\WinPad\WinPad\bin\Debug\WinPad.pdb
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.Form1.resources
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.Properties.Resources.resources
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.csproj.GenerateResource.cache
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.csproj.CoreCompileInputs.cache
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.exe
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.pdb
