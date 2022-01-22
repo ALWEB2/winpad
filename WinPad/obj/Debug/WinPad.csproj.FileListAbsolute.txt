@@ -7,3 +7,4 @@ C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.csproj.GenerateRes
 C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.csproj.CoreCompileInputs.cache
 C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.exe
 C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.pdb
+C:\Users\19191093\source\repos\WinPad\WinPad\obj\Debug\WinPad.csproj.AssemblyReference.cache

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinPad
@@ -153,6 +148,23 @@ namespace WinPad
             foreach (FileInfo file in Files)
             {
                 listBox1.Items.Add(file.Name);
+            }
+        }
+
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Text|*.txt|All|*.*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                openFileDialog1.Title = "Open";
+                if (File.Exists(openFileDialog1.FileName))
+                {
+                    richTextBox1.Text = File.ReadAllText(openFileDialog1.FileName);
+                    string textBoxt = Path.GetFileName(openFileDialog1.FileName);
+                    string txt = textBoxt.Replace(".txt", "");
+                    textBox1.Text = txt;
+                }
             }
         }
     }
